@@ -21,7 +21,7 @@ namespace Business.Concrete
 
         public void Create(News News)
         {
-
+            News.PublishDate = DateTime.Now;    
             _context.News.Add(News);
             _context.SaveChanges();
         }
@@ -32,15 +32,16 @@ namespace Business.Concrete
             _context.SaveChanges();
         }
 
-        public List<News> GetAll()
-        {
-            var News = _context.News.Include(x => x.MyUser).ToList();
-            return News;
-        }
+      
 
         public News GetById(int? id)
         {
-            var News = _context.News.Include(x => x.MyUser).FirstOrDefault(x => x.Id == id);
+            var News = _context.News
+                .Include(x => x.MyUser)
+                .FirstOrDefault(x => x.Id == id);
+
+            News.Views += 1;
+            Update(News);
 
             return News;
         }
@@ -50,5 +51,14 @@ namespace Business.Concrete
             _context.News.Update(News);
             _context.SaveChanges();
         }
+
+        public List<News> GetAll()
+        {
+            var News = _context.News.Include(x => x.MyUser).ToList();
+        
+            return News;
+
+        }
+
     }
 }

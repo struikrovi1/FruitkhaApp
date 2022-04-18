@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI: Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -435,6 +442,8 @@ a.read-more-btn:hover {
 a.boxed-btn, a.bordered-btn, a.cart-btn {
   border-radius: 50px;
 }
+
+
 
 .section-title h3 {
   font-size: 40px;
@@ -1121,7 +1130,7 @@ a.tof-btn:hover i {
 .footer-box.subscribe form button {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s;
+  transition: 0.
 }
 
 .footer-box.subscribe form button:hover {
@@ -1347,6 +1356,17 @@ a.mobile-show.search-bar-icon {
 a.mobile-show.search-bar-icon:hover {
   color: #F28123;
 }
+
+a.user-bar-icon {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+ a.user-bar-icon:hover {
+        color: #F28123;
+    }
+
 
 /* -----------------------------------------------------------------------------
 
@@ -1582,32 +1602,11 @@ div.owl-controls, .owl-controls div {
 # News Styles
 
 ----------------------------------------------------------------------------- */
-.news-bg-1 {
-  background-image: url(../img/latest-news/news-bg-1.jpg);
-}
 
-.news-bg-2 {
-  background-image: url(../img/latest-news/news-bg-2.jpg);
-}
-
-.news-bg-3 {
-  background-image: url(../img/latest-news/news-bg-3.jpg);
-}
-
-.news-bg-4 {
-  background-image: url(../img/latest-news/news-bg-4.jpg);
-}
-
-.news-bg-5 {
-  background-image: url(../img/latest-news/news-bg-5.jpg);
-}
-
-.news-bg-6 {
-  background-image: url(../img/latest-news/news-bg-6.jpg);
-}
 
 .latest-news-bg {
-  height: 200px;
+  min-height: 200px;
+  min-width: 300px;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -1955,37 +1954,39 @@ span.comment-date {
   margin-bottom: 25px;
 }
 
-.time-counter {
-  position: relative;
-  margin-bottom: 25px;
+.countdown{
+    display:flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
 }
 
-.time-counter .time-countdown {
-  position: relative;
-}
+    .countdown li {
+        position: relative;
+        display: inline-block;
 
-.time-countdown .counter-column {
-  position: relative;
-  display: inline-block;
-  margin: 0px 0px 5px;
-  font-size: 13px;
-  line-height: 1em;
-  padding: 8px 20px 14px;
-  text-transform: capitalize;
-  text-align: center;
-  border: 2px solid #F28123;
-}
+        font-size: 13px;
+        line-height: 1em;
+        padding: 8px 20px 14px;
+        text-transform: capitalize;
+        text-align: center;
+        border: 2px solid #F28123;
+        margin-left: 10px;
+    }
 
-.time-countdown .counter-column .count {
-  position: relative;
-  display: block;
-  font-size: 30px;
-  line-height: 1.4em;
-  padding: 0px 0px;
-  color: #F28123;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+        .countdown li .count {
+            position: relative;
+            display: block;
+            font-size: 30px;
+            line-height: 1.4em;
+            padding: 0px 0px;
+            color: #F28123;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+
 
 /* -----------------------------------------------------------------------------
 
@@ -2396,6 +2397,7 @@ ul.social-link-team li a {
 
 .single-product-item {
   margin-bottom: 30px;
+
 }
 
 .product-image {
@@ -2554,9 +2556,68 @@ thead.cart-table-head tr {
 }
 
 td.product-quantity input {
-  margin-bottom: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid #dcdcdc;
 }
 
+td.product-quantity > input {
+    width: 80px;
+    border-radius: 3px;
+}
+
+
+
+.cart-plus-minus {
+    width: 100%;
+    position: relative;
+}
+
+
+
+   .cart-plus-minus input {
+       
+        border: 0px;
+        outline: 0px;
+        background: none;
+        font-weight: 400;
+        color: #222;
+        font-size: 14px;
+        display: inline-block;
+        height: 45px;
+        list-style: 45px;
+        padding: 0 50px;
+        width: 180px;
+        border: 1px solid #ebebeb;
+        text-align: center;
+        border-radius: 0;
+    }
+
+    .cart-plus-minus .qtybutton {
+        font-size: 20px;
+        color: #222;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        height: 22px;
+        width: 22px;
+        background: transparent;
+        border-radius: 30px;
+        line-height: 1;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 0;
+        transform: translateY(-50%);
+    }
+
+    .cart-plus-minus .dec {
+        left: 40px;
+    }
+
+    .cart-plus-minus .inc {
+        right: 40px;
+    }
 td.product-remove a {
   color: #051922;
 }

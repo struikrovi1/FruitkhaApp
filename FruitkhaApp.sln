@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{B4C2EEDA-F6D7-4B10-8B5E-6622F92D587F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{092512B1-94B1-42F4-A33E-C4530CD7A5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{092512B1-94B1-42F4-A33E-C4530CD7A5A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conos", "Conos\Conos.csproj", "{FCBD926F-1F63-472C-971D-682E41AF5314}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{092512B1-94B1-42F4-A33E-C4530CD7A5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092512B1-94B1-42F4-A33E-C4530CD7A5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092512B1-94B1-42F4-A33E-C4530CD7A5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCBD926F-1F63-472C-971D-682E41AF5314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBD926F-1F63-472C-971D-682E41AF5314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBD926F-1F63-472C-971D-682E41AF5314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBD926F-1F63-472C-971D-682E41AF5314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
 using DataAccess;
+using Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebUI.Data;
@@ -13,16 +14,28 @@ builder.Services.AddDbContext<FruitkhaDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<MyUser>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<FruitkhaDbContext>();
-builder.Services.AddControllersWithViews();
 
+
+builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ISliderManager, SliderManager>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddScoped<ICategoryManager, CategoryManager>();
+builder.Services.AddScoped<ICountdownManager, CountdownManager>();
 builder.Services.AddScoped<ITeamManager, TeamManager>();
 builder.Services.AddScoped<INewsManager, NewsManager>();
 builder.Services.AddScoped<IProductManager, ProductManager>();
+builder.Services.AddScoped<ICommentManager, CommentManager>();
+builder.Services.AddScoped<IContactManager, ContactManager>();
+builder.Services.ConfigureApplicationCookie(option =>
+{
+    option.LoginPath = "/auth/login";
+    option.AccessDeniedPath = "/auth/login";
+});
+
+//builder.Services.AddScoped<UserManager<MyUser>>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -42,8 +55,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
      name: "areas",

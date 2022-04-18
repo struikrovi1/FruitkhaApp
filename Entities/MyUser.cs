@@ -10,12 +10,12 @@ namespace Entities
 {
     public class MyUser : IdentityUser
     {
-
         public string Name { get; set; }
+        public string Surname { get; set; }
+        public string PhotoURL { get; set; }
+        public string About { get; set; }
 
-        public string Email { get; set; }   
 
-        public string PhotoUrl { get; set; }    
 
 
 

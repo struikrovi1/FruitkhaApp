@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class FruitkhaDbContext : IdentityDbContext <MyUser>
+    public class FruitkhaDbContext : IdentityDbContext<MyUser>
     {
         public FruitkhaDbContext(DbContextOptions<FruitkhaDbContext> options)
           : base(options)
@@ -33,6 +33,9 @@ namespace DataAccess
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+        public DbSet<Contact> Contacts { get; set; }
+
+        public DbSet<Countdown> Countdowns { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

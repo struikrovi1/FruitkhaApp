@@ -13,5 +13,8 @@ namespace WebUI.ViewModels
         public List<Category> Categories { get; set; }
 
         public List<News> News { get; set; }
+
+        public Product DiscProduct { get; set; }    
+        public Countdown Countdown  { get; set; }  
     }
 }

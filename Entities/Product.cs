@@ -19,6 +19,8 @@ namespace Entities
 
         public bool Available { get; set; }   
 
+        public bool? isDiscount { get; set; }    
+
         public string PhotoUrl { get; set; }
 
         public int CategoryId { get; set; } 

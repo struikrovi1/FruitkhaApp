@@ -44,6 +44,12 @@ namespace Business.Concrete
             return Service;
         }
 
+        public List<Service> HomeServices()
+        {
+            var Service = _context.Services.Where(x => x.IsIndex == true).Take(3).ToList();
+            return Service;
+        }
+
         public void Update(Service Service)
         {
             _context.Services.Update(Service);

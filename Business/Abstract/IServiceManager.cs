@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
 
         List<Service> GetAll();
+        List<Service> HomeServices();
         void Create(Service service);
         Service GetById(int? id);
         void Update(Service service);

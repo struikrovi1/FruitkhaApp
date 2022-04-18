@@ -1,83 +1,81 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Web.ViewModels;
 
-namespace WebUI.Controllers
+namespace Web.Controllers
 {
     public class AuthController : Controller
     {
-        // GET: AuthController
-        public ActionResult Index()
+        private readonly UserManager<MyUser> _userManager;
+        private readonly SignInManager<MyUser> _signInManager;
+
+        public AuthController(UserManager<MyUser> userManager, SignInManager<MyUser> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
+        public IActionResult Index()
         {
             return View();
         }
 
-        // GET: AuthController/Details/5
-        public ActionResult Login()
+        [HttpGet]
+        public async Task<IActionResult> Register()
         {
             return View();
         }
 
-        // GET: AuthController/Create
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        // POST: AuthController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Register(RegisterVM registerVM)
         {
-            try
+            MyUser user = new()
+            {
+
+                UserName = registerVM.Name,
+                Name = registerVM.Name,
+                Surname = registerVM.Name,
+                Email = registerVM.Email,
+                About = registerVM.Name,
+                PhotoURL = registerVM.Name
+
+
+
+            };
+
+            IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
+
+
+            if (result.Succeeded)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
-        // GET: AuthController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public async Task<IActionResult> Login()
         {
             return View();
         }
 
-        // POST: AuthController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Login(LoginVM loginVM)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+            var user = await _userManager.FindByEmailAsync(loginVM.Email);
+            if (user == null) return View();
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+            if (result.Succeeded)
             {
                 return View();
+              
             }
+          
+                return RedirectToAction(nameof(Login));
+            
+           
         }
 
-        // GET: AuthController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AuthController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

@@ -1,126 +1,137 @@
-﻿@{
+﻿@using Entities
+@model SingleProductVM
+
+@{
     ViewData["Title"] = "Home Page";
+    decimal newPrice = default;
+    Countdown countdown = ViewBag.Countdown as Countdown;
+    bool isExistDiscount = countdown != null;
+
+    @if (isExistDiscount)
+    {
+        decimal rare = Math.Truncate(countdown.Discount);
+        decimal discount = rare / 100;
+        decimal minusDiscount = @Model.OneProduct.Price * discount;
+        newPrice = Math.Round((@Model.OneProduct.Price - minusDiscount), 1);
+    }
+    else
+    {
+        newPrice = @Model.OneProduct.Price;
+    }
 }
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
 
-	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="breadcrumb-text">
-						<p>See more Details</p>
-						<h1>Single Product</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end breadcrumb section -->
+                    <h1>@Model.OneProduct.Name</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+<!-- single product -->
+<div class="single-product mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="single-product-img">
+                    <img src="@Model.OneProduct.PhotoUrl" alt="">
+                </div>
+            </div>
 
-	<!-- single product -->
-	<div class="single-product mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="single-product-img">
-						<img src="assets/img/products/product-img-5.jpg" alt="">
-					</div>
-				</div>
-				<div class="col-md-7">
-					<div class="single-product-content">
-						<h3>Green apples have polyphenols</h3>
-						<p class="single-product-pricing"><span>Per Kg</span> $50</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
-						<div class="single-product-form">
-							<p class="single-product-pricing">Quantity:  </p>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-							<p><strong>Categories: </strong>Fruits, Organic</p>
-						</div>
-						<h4>Share:</h4>
-						<ul class="product-share">
-							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
-							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end single product -->
 
-	<!-- more products -->
-	<div class="more-products mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Related</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end more products -->
+            <div class="col-md-7">
+                <div class="single-product-content">
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end logo carousel -->
+                    <h3>@Model.OneProduct.Name</h3>
+                    <p class="single-product-pricing">
+                        <div class="d-flex">
+                            @if (isExistDiscount)
+                            {
+                                <h4 class="old-price"> <del>@Model.OneProduct.Price</del></h4>
+                            }
+                            <h4 style="font-weight: bold; color: #f28123; margin-left: 17px;" class="new-price"> @(newPrice) AZN </h4>
+                        </div>
+                    </p>
+                    <p> @Model.OneProduct.Description</p>
+                    <div class="single-product-form">
+
+                        <a href="/cart" pro-id="@Model.OneProduct.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <p><strong>Categories: </strong>@Model.OneProduct.Category.Name</p>
+                    </div>
+                    <h4>Share:</h4>
+                    <ul class="product-share">
+                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end single product -->
+<!-- more products -->
+<div class="more-products mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3><span class="orange-text">Related</span> Products</h3>
+                    <p>You may also like product from the <strong class="orange-text">@Model.OneProduct.Category.Name</strong> category:</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.SimilarProducts)
+            {
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="/product/details/@item.Id"><img src="@item.PhotoUrl" alt=""></a>
+                        </div>
+                        <h3>@item.Name</h3>
+                        <p class="product-price"><span>Per Kg</span> @item.Price AZN </p>
+                        <a href="/cart" pro-id="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+<!-- end more products -->
+<!-- logo carousel -->
+<div class="logo-carousel-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="logo-carousel-inner">
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/1.png" alt="">
+                    </div>
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/2.png" alt="">
+                    </div>
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/3.png" alt="">
+                    </div>
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/4.png" alt="">
+                    </div>
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end logo carousel -->

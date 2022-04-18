@@ -49,9 +49,24 @@ namespace Business.Concrete
             return featuredproduct;
         }
 
+        public Product GetDiscount()
+        {
+            var discount = _context.Products.
+                Where(x => x.isDiscount == true && x.Available == true && x.IsFeatured != true).FirstOrDefault();
+            return discount;
+        }
+
         public Product GetById(int? id)
         {
             var Product = _context.Products.Include(x => x.Category).FirstOrDefault(x => x.Id == id);
+
+            return Product;
+        }
+
+
+        public Product GetByDisc(int? id)
+        {
+            var Product = _context.Products.Include(x => x.Category).Where(x=>x.isDiscount==true).FirstOrDefault(x => x.Id == id);
 
             return Product;
         }
@@ -62,5 +77,22 @@ namespace Business.Concrete
             _context.SaveChanges();
         }
 
+        public List<Product> Similar(int catId, int proId)
+        {
+            var pros = _context.Products
+                .Include(x=>x.Category)
+                .Where(x=>x.CategoryId==catId&x.Id != proId)
+                .ToList();
+
+            return pros;
+        }
+
+        public async Task<List<Product>>? GetByIds(IEnumerable<int> ids)
+        {
+            return await _context.Products
+           .Include(c => c.Category)
+               .Where(c => ids.Contains(c.Id))
+               .ToListAsync();
+        }
     }
 }

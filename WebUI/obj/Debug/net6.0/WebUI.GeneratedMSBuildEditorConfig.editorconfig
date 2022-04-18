@@ -51,10 +51,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Desktop/Projects/C\#/FruitkhaApp/WebUI/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/user/Desktop/Projects/C\#/FruitkhaApp/WebUI/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/Desktop/Projects/C\#/FruitkhaApp/WebUI/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Projects/C\#/FruitkhaApp/WebUI/Views/Auth/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Desktop/Projects/C\#/FruitkhaApp/WebUI/Views/Cart/Index.cshtml]
