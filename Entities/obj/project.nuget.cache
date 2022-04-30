@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c2qX3mn13KxLu+tEShlSry+4Gn37lyU1GFMwl7TWajKsD2KFJRsQhGS+WaKmODkhtOCrtsA5g5XwRBJFbPqR+w==",
+  "dgSpecHash": "lX4s/gAH3laWwPrFVsEVofFVYDu9/Bq3Cp639OKCeefXaJsnzVdxlAtrRsCtgOZcRyhKMpgpAwyvyt7KSaKHFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.3\\microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.3\\microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512",

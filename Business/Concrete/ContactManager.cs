@@ -21,8 +21,9 @@ namespace Business.Concrete
 
         public void Create(Contact contact)
         {
-            
+            contact.Read = 0;
             _context.Contacts.Add(contact);
+
             _context.SaveChanges();
         }
 
@@ -41,6 +42,8 @@ namespace Business.Concrete
         public Contact GetById(int? id)
         {
           var contact = _context.Contacts.FirstOrDefault(x=>x.Id== id);
+            contact.Read+=1;
+            Update(contact);
             return contact;
         }
 

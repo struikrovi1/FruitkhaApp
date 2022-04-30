@@ -1,0 +1,64 @@
+﻿@model Entities.Slider
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Slider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PhotoUrl" class="control-label"></label>
+
+                <input type="file" asp-for="PhotoUrl" class="form-control" name="Image" />
+                <input type="hidden" name="OldPhoto" value="@Model.PhotoUrl" />
+                <img width="300" src="@Model.PhotoUrl" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubHeader" class="control-label"></label>
+                <input asp-for="SubHeader" class="form-control" />
+                <span asp-validation-for="SubHeader" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input value="false" type="hidden" asp-for="RightText" class="form-control" />
+                <span asp-validation-for="RightText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input value="false" type="hidden" asp-for="LeftText" class="form-control" />
+                <span asp-validation-for="LeftText" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input type="hidden" value="false" class="form-check-input" asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+
+                <input value="false" type="hidden" asp-for="CenterText" class="form-control" />
+                <span asp-validation-for="CenterText" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

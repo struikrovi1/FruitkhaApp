@@ -12,7 +12,7 @@ namespace Business.Abstract
         List<Product> GetAll();
         List<Product> Similar( int catId, int proId);
 
-        Product GetDiscount();
+        List<Product> GetDiscount();
 
         Task<List<Product>>? GetByIds(IEnumerable<int> ids);
         

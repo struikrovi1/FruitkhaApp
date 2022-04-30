@@ -15,8 +15,9 @@ namespace Entities
 
         public bool IsFeatured { get; set; }
 
-        public decimal Price { get; set; }  
+        public decimal Price { get; set; }
 
+        public decimal? Discount { get; set; }
         public bool Available { get; set; }   
 
         public bool? isDiscount { get; set; }    

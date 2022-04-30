@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Entities.Slider>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+
+        <tr>
+            
+               <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+               <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoUrl)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.SubHeader)
+            </th>
+           
+         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+              <img width = "100" src = "@item.PhotoUrl"/>
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.SubHeader)
+            </td>
+           
+        
+            <td class="d-flex align-items-center">
+                    <a class="btn btn-warning me-2" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i></a> &nbsp; &nbsp;
+                    @*<a asp-action = "Delete" asp-route-id ="@item.Id">Delete</a>*@
+                    <form id="courseRemove" method="post" asp-action="Delete">
+                        <input type="hidden" value=@item.Id name="Id" />
+                        <button class="btn btn-danger btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                    </form> &nbsp; &nbsp;
+
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+@section Scripts{
+<script>
+    $(".btn-delete").on("click", function(e){
+        e.preventDefault()
+        var yesNo = confirm("Are you sure you want to delete this item?")
+        if(yesNo){
+            $(this).parents("#courseRemove").submit();
+        }
+    })
+
+
+
+               
+</script>
+
+}

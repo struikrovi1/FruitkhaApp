@@ -18,6 +18,8 @@ namespace Entities
         public string Subject { get; set; }
 
         public string Message { get; set; }
+
+        public int Read { get; set; }  
     }
 
 }

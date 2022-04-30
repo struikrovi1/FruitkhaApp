@@ -9,10 +9,10 @@
 
     @if (isExistDiscount)
     {
-        decimal rare = Math.Truncate(countdown.Discount);
+        decimal rare = Math.Truncate(countdown.Product.Discount.Value);
         decimal discount = rare / 100;
         decimal minusDiscount = @Model.OneProduct.Price * discount;
-        newPrice = Math.Round((@Model.OneProduct.Price - minusDiscount), 1);
+      
     }
     else
     {
@@ -52,15 +52,15 @@
                         <div class="d-flex">
                             @if (isExistDiscount)
                             {
-                                <h4 class="old-price"> <del>@Model.OneProduct.Price</del></h4>
+                                <h4 class="old-price"> <del>@countdown.Product.Price</del></h4>
                             }
-                            <h4 style="font-weight: bold; color: #f28123; margin-left: 17px;" class="new-price"> @(newPrice) AZN </h4>
+                            <h4 class="new-price"> @(newPrice) AZN </h4>
                         </div>
                     </p>
                     <p> @Model.OneProduct.Description</p>
                     <div class="single-product-form">
 
-                        <a href="/cart" pro-id="@Model.OneProduct.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="#" pro-id="@Model.OneProduct.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                         <p><strong>Categories: </strong>@Model.OneProduct.Category.Name</p>
                     </div>
                     <h4>Share:</h4>
@@ -98,7 +98,7 @@
                         </div>
                         <h3>@item.Name</h3>
                         <p class="product-price"><span>Per Kg</span> @item.Price AZN </p>
-                        <a href="/cart" pro-id="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="#" pro-id="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
                 </div>
             }

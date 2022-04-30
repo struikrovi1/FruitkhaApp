@@ -76,8 +76,8 @@
             <div class="sidebar">
                 <!-- Start Logobar -->
                 <div class="logobar">
-                    <a href="/" class="logo logo-large"><img src="assets/img/logo.png" class="img-fluid" alt="logo"></a>
-                    <a href="/" class="logo logo-small"><img src="assets/img/logo.png" class="img-fluid" alt="logo"></a>
+                    <a href="/" class="logo logo-large">  <img src="~/assets/img/logo.png" alt=""> </a>
+                    <a href="/" class="logo logo-small"> <img src="~/assets/img/logo.png" alt=""></a>
                 </div>
                 <!-- End Logobar -->
                 <!-- Start Navigationbar -->
@@ -85,19 +85,19 @@
                     <ul class="vertical-menu">
                           <li><a href="/">Main Site</a></li>
                           <li><a href="/Admin/Dashboard">Admin Home</a></li>
-                           <li><a style = "color: #f28123; font-weight: bold;" href="/AdminPanel/Reguest">Mails</a></li>
+                           <li class = "d-flex align-items-center justify-content-evenly"><a style = "color: #f28123; font-weight: bold;" href="/Admin/Contact">Mails</a> <i class="fa-solid fa-bell"></i></li>
                         <li>
                             <a href="javaScript:void();">
                               <div> <i class="fa-solid fa-leaf"></i> <span style= "margin-left:20px;">Dashboard</span> <i class="feather icon-chevron-right pull-right"></i> </div>
                             </a>
                             <ul class="vertical-submenu">
+                                   <li><a href="/Admin/Product">Product</a></li>
+                                    <li><a href="/Admin/Category">Category</a></li>
+                                <li><a href="/Admin/Slider">Slider</a></li>
+                                <li><a href="/Admin/Service">Service</a></li>
+                                <li><a href="/Admin/Countdown">Discount</a></li>
+                               
                                  
-                                <li><a href="/AdminPanel/Header">Header</a></li>
-                                <li><a href="/AdminPanel/Service">Service</a></li>
-                                <li><a href="/AdminPanel/Rating">Rating</a></li>
-                                 <li><a href="/AdminPanel/Gear">Offer</a></li>
-                                    <li><a href="/AdminPanel/News">News</a></li>
-                                    <li><a href="/AdminPanel/Team">Team Members</a></li>
                                 
                                
                         
@@ -328,7 +328,7 @@
     <script src="/frontadmin/assets/plugins/switchery/switchery.min.js"></script>
     <!-- Core js -->
     <script src="/frontadmin/assets/js/core.js"></script>
-    @await RenderSectionAsync("MyScripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
     <!-- End js -->
 </body>
 

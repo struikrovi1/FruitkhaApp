@@ -54,10 +54,48 @@ namespace Business.Concrete
 
         public List<News> GetAll()
         {
-            var News = _context.News.Include(x => x.MyUser).ToList();
+            var News = _context.News.Take(3).Include(x => x.MyUser).ToList();
         
             return News;
 
+        }
+
+        public List<News> LastNews(string userId, int newsId)
+        {
+            var News = _context.News
+                .OrderBy(x => x.PublishDate).Take(1)
+               
+                .Include(x => x.MyUser)
+                .Where(x => x.MyUserId== userId && x.Id != newsId)
+                .ToList();
+                
+
+            return News;
+
+        }
+
+        public List<News> GetAll(int? pageNo, int recordSize)
+        {
+            if (pageNo == null)
+            {
+                pageNo = 1;
+            }
+            int currentPage = 3 * pageNo.Value - 3;
+
+
+            var blogs = _context.News
+                .Skip(currentPage)
+                .Take(3)
+                .Include(x => x.MyUser)
+                .ToList();
+
+            return blogs;
+        }
+
+        public int GetAllCount()
+        {
+            var blogs = _context.News.ToList();
+            return blogs.Count();
         }
 
     }

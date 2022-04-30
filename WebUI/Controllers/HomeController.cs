@@ -35,7 +35,7 @@ namespace WebUI.Controllers
                 Services = _serviceManager.HomeServices(),
                 News = _newsManager.GetAll(),
                 Countdown = _countdownManager.GetAll().FirstOrDefault(),
-                DiscProduct = _productManager.GetDiscount()
+               
 
 
             };

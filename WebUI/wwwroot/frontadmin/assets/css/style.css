@@ -86,6 +86,27 @@ body {
     color: #263a5b;
 }
 
+.read-td {
+    
+    background-color: red;
+    border-radius: 25px;
+    margin: 10px;
+    width: 25px;
+    height: 20px;
+}
+
+    .read-td i {
+        color: white;
+        font-size: 25px;
+    }
+
+    .active-td {
+        background-color: green !important;
+    }
+
+        .active-td i::before {
+            content: "\f06e";
+        }
 
 
 .iconList i {
@@ -106,6 +127,8 @@ body {
         background-color: forestgreen;
         color: white;
     }
+
+
 
 
 @keyframes animate {

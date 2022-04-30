@@ -1,0 +1,70 @@
+﻿@model Entities.Service
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Service</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IconUrl" class="control-label"></label>
+                <input id = "iconInput"  type = "hidden" asp-for="IconUrl" class="form-control" />
+                <span asp-validation-for="IconUrl" class="text-danger"></span>
+              
+                  
+                <div class="iconList">
+                  
+                   <i class="fas fa-leaf"></i>
+                   <i class="fas fa-carrot"></i>
+                   <i class="fas fa-lemon"></i>
+                   <i class="fa-solid fa-bell-concierge"></i>
+                   <i class="fa-solid fa-seedling"></i>
+                   <i class="fa-solid fa-paper-plane"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTitle" class="control-label"></label>
+                <input asp-for="SubTitle" class="form-control" />
+                <span asp-validation-for="SubTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsIndex" class="control-label"></label>
+               
+                <input type="checkbox" asp-for="IsIndex" class="form-control" />
+                <span asp-validation-for="IsIndex" class="text-danger"></span>
+            </div>
+        
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts{
+<script>
+    $(".iconList i").on("click", function(){
+         $(".iconList i").removeClass("icon-active")
+        $(this).toggleClass("icon-active")
+        const value = $(this).attr("class")
+        $("#iconInput").val(value)
+    })
+
+</script>
+}

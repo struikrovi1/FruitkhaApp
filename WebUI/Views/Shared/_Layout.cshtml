@@ -51,7 +51,7 @@
                     <div class="main-menu-wrap">
                         <!-- logo -->
                         <div class="site-logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="~/assets/img/logo.png" alt="">
                             </a>
 
@@ -63,8 +63,8 @@
                                 <li class="current-list-item">
                                     <a href="/">Home</a>
                                     <ul class="sub-menu">
-                                        <li><a href="index.html">Static Home</a></li>
-                                        <li><a href="index_2.html">Slider Home</a></li>
+                                        <li><a href="/">Static Home</a></li>
+                                        <li><a href="/">Slider Home</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/about">About</a></li>
@@ -73,7 +73,7 @@
                                     <ul class="sub-menu">
                                         <li><a href="404.html">404 page</a></li>
                                         <li><a href="about.html">About</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="/cart">Cart</a></li>
                                         <li><a href="checkout.html">Check Out</a></li>
                                         <li><a href="/contact">Contact</a></li>
                                         <li><a href="news.html">News</a></li>
@@ -99,7 +99,8 @@
                                 <li>
                                     <div class="header-icons">
                                         <a class="user-bar-icon" href="/auth/login"><i class="fas fa-user"></i></a>
-                                        <a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i>
+                                            <span id="cart-value">0</span></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                     </div>
                                 </li>
@@ -122,9 +123,13 @@
                     <span class="close-btn"><i class="fas fa-window-close"></i></span>
                     <div class="search-bar">
                         <div class="search-bar-tablecell">
-                            <h3>Search For:</h3>
+                            <form action = "news/index">
+                             <h3>Search For:</h3>
                             <input type="text" placeholder="Keywords">
                             <button type="submit">Search <i class="fas fa-search"></i></button>
+
+                            </form>
+                     
                         </div>
                     </div>
                 </div>
@@ -218,7 +223,7 @@
     <!-- mean menu -->
     <script src="~/assets/js/jquery.meanmenu.min.js"></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- sticker js -->
     <script src="~/assets/js/sticker.js"></script>
 
@@ -253,6 +258,7 @@
           s.parentNode.insertBefore(ga, s);
         })();
     </script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="~/cartJs/cart.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 

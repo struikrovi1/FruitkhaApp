@@ -9,9 +9,9 @@ namespace Business.Abstract
 {
     public interface ICommentManager
     {
-        List<Comment> GetAll();
+        List<Comment> GetAllComment(int newsId);
 
-       News GetById (int? id);  
+        void AddComment(Comment comment);
 
     }
 }

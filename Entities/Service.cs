@@ -16,7 +16,7 @@ namespace Entities
 
         public string? SubTitle { get; set; }
 
-        public bool? IsIndex { get; set; }  
+        public bool IsIndex { get; set; }  
 
     }
 }

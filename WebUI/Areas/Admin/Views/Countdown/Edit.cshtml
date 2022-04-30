@@ -1,0 +1,111 @@
+﻿@using Entities
+@model Entities.Countdown
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Countdown</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex">
+
+                <div class="form-group">
+                    <label asp-for="months" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="months" class="form-control" />
+                        <h1>:</h1>
+                    </div>
+                    <span asp-validation-for="months" class="text-danger"></span>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="days" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="days" class="form-control" />
+                        <h1>:</h1>
+                    </div>
+                    <span asp-validation-for="days" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="year" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="year" class="form-control" />
+                        <h1>:</h1>
+                    </div>
+
+                    <span asp-validation-for="year" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="hours" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="hours" class="form-control" />
+                        <h1>:</h1>
+
+                    </div>
+
+                    <span asp-validation-for="hours" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="minutes" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+
+                        <input asp-for="minutes" class="form-control" />
+                        <h1>:</h1>
+
+                    </div>
+
+                    <span asp-validation-for="minutes" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="seconds" class="control-label"></label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="seconds" class="form-control" />
+                        <h1>/</h1>
+                    </div>
+                    <span asp-validation-for="seconds" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="dealDescr" class="control-label"></label>
+                <input asp-for="dealDescr" class="form-control" />
+                <span asp-validation-for="dealDescr" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                   <select asp-for="ProductId" class="form-control mb-2">
+                    @foreach (var cat in ViewBag.ProductList as List<Product>)
+                    {
+                        <option value="@cat.Id"> @cat.Name</option>
+                    }
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

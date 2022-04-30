@@ -19,12 +19,15 @@ namespace WebUI.Controllers
         }
 
         // GET: ProductController
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
+  
             ProductVM vm = new()
             {
                 Products = _productManager.GetAll(),
                 Categories = _categoryManager.GetAll(),
+                Countdown = _countdownManager.GetAll().FirstOrDefault(),
+               
 
             };
             return View(vm);

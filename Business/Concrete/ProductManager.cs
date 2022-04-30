@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
+
     public class ProductManager : IProductManager
     {
 
@@ -35,7 +36,7 @@ namespace Business.Concrete
 
         public List<Product> GetAll()
         {
-            var Product = _context.Products.Include(x=>x.Category).ToList();
+            var Product = _context.Products.Include(x=>x.Category).Where(x=>x.Discount==null).ToList();
             return Product;
         }
 
@@ -49,10 +50,10 @@ namespace Business.Concrete
             return featuredproduct;
         }
 
-        public Product GetDiscount()
+        public List<Product> GetDiscount()
         {
             var discount = _context.Products.
-                Where(x => x.isDiscount == true && x.Available == true && x.IsFeatured != true).FirstOrDefault();
+                Where(x => x.Discount !=null).ToList();
             return discount;
         }
 

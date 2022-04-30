@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IMzT9uFIkJotO3bmrs/SNBJq5HRbIvtAq0XEHSCtlvHYbUGbFVL2pc/eGgJaJ8YSyILjc36Mw85SiEBv21y7sw==",
+  "dgSpecHash": "lHPClsXG8N4UITlYUi2VM5zEeZ2ZsCDSxT+dVaFDxAHvQJQoO3Jk4nWP+r9kQzwZiEe+FZ3e0ePx9erRjP311g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

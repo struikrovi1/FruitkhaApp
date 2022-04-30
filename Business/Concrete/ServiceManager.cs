@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         public List<Service> GetAll()
         {
-            var Service = _context.Services.ToList();
+            var Service = _context.Services.Take(4).ToList();
             return Service;
         }
 

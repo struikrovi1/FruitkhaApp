@@ -20,13 +20,9 @@ namespace Entities
         public string minutes { get; set; }
 
         public string seconds { get; set; }
-        public decimal Discount { get; set; }   
-
         public string dealDescr { get; set; }  
-   
         public DateTime Month { get; set; }
-
-        
-
+        public int ProductId { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

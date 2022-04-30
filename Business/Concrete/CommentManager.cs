@@ -17,17 +17,18 @@ namespace Business.Concrete
         {
             _context = context;
         }
-        public List<Comment> GetAll()
+        public List<Comment> GetAllComment(int newsId)
         {
-            var comments = _context.Comments.ToList();
+            var comments = _context.Comments.Where(x => x.NewsId == newsId).ToList();
             return comments;
         }
 
-        public News GetById(int? id)
+        public void AddComment(Comment comment)
         {
-            var news = _context.News.FirstOrDefault(x => x.Id == id);
-
-            return news;
+            comment.CreatedDate = DateTime.Now;
+            _context.Add(comment);
+            _context.SaveChanges();
         }
+
     }
 }

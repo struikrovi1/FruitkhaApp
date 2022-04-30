@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public void Create(Countdown Countdown)
         {
-            
+            Countdown.Month = DateTime.Now;
             _context.Countdowns.Add(Countdown);
             _context.SaveChanges();
         }
@@ -36,8 +36,8 @@ namespace Business.Concrete
 
         public Countdown GetById(int? id)
         {
-            var Countdown = _context.Countdowns
-              
+            var Countdown = _context.Countdowns.Include(x => x.Product)
+
                 .FirstOrDefault(x => x.Id == id);
 
       
@@ -54,7 +54,7 @@ namespace Business.Concrete
 
         public List<Countdown> GetAll()
         {
-            var Countdown = _context.Countdowns.ToList();
+            var Countdown = _context.Countdowns.Include(x=>x.Product).ToList();
 
             return Countdown;
 

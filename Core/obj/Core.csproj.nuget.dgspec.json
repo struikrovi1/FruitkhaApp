@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\Core.csproj": {}
+    "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\Core.csproj": {
+    "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Core\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

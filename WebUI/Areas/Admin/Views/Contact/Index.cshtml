@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Entities.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+
+
+
+          
+
+                        <th>Readed</th>
+                          <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var count = 0;
+        }
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td class = "read-td @(item.Read>0 ? "active-td" : "" )"><i class="fa-solid fa-eye-slash"></i></td>
+
+                <td class="d-flex align-items-center">
+                    <form id="courseRemove" method="post" asp-action="Delete">
+                        <input type="hidden" value=@item.Id name="Id" />
+                        <button class="btn btn-danger btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+                    </form> &nbsp; &nbsp;
+
+                  
+                        <a class="btn btn-info"  href="/Admin/Contact/Details/@item.Id">@(item.Read>0? "Rewatch": "Read")</a>
+                   
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts{
+
+<script>
+    $(".btn-delete").on("click", function(e){
+        e.preventDefault()
+        var yesNo = confirm("Are you sure you want to delete this item?")
+        if(yesNo){
+            $(this).parents("#courseRemove").submit();
+        }
+    })
+
+
+</script>
+
+
+
+}

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Conos\\Conos.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Conos\\Conos.csproj",
       "projectName": "Conos",
-      "projectPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Conos\\Conos.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Conos\\Conos.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\FruitkhaApp\\Conos\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Projects\\C#\\MVC\\FruitkhaApp\\Conos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

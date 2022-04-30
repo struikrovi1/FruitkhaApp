@@ -88,7 +88,7 @@ background-repeat: no repeat;
                         </div>
                         <h3>@item.Name</h3>
                         <p class="product-price"><span>Per Kg</span>@item.Price AZN </p>
-                        <a href="/cart" pro-id="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="#" pro-id="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
                 </div>
 
@@ -103,25 +103,30 @@ background-repeat: no repeat;
 <section class="cart-banner pt-100 pb-100">
     <div class="container">
         <div class="row clearfix">
+
             @{
-                decimal discount = @Model.Countdown.Discount / 100;
-                decimal minusDiscount = @Model.DiscProduct.Price * discount;
-                decimal newPrice = Math.Round((@Model.DiscProduct.Price - minusDiscount),1);
-                decimal currentDiscount = Math.Truncate(@Model.Countdown.Discount);
-            }
+                decimal oldPr = Model.Countdown.Product.Price;
+                decimal newPr = Convert.ToDecimal(@Model.Countdown.Product.Discount);
+
+                decimal disc = Math.Round((newPr * 100 / oldPr),2);
+
+                decimal totalDisc = Math.Truncate(100 - disc);
+
+
+           }
             <!--Image Column-->
             <div class="image-column col-lg-6">
                 <div class="image">
                     <div class="price-box">
                         <div class="inner-price">
                             <span class="price">
-                                <strong> @currentDiscount%</strong> <br> off per kg
+                                <strong> @totalDisc%</strong> <br> off per kg
                             </span>
                         </div>
 
                     </div>
-                    <a sr = "/product/details/@Model.DiscProduct.Id">
-                           <img src="@Model.DiscProduct.PhotoUrl" alt="">
+                    <a href= "/product/details/@Model.Countdown.Product.Id">
+                           <img src="@Model.Countdown.Product.PhotoUrl" alt="">
                     </a>
                  
                 </div>
@@ -129,10 +134,10 @@ background-repeat: no repeat;
             <!--Content Column-->
             <div class="content-column col-lg-6">
                 <h3><span class="orange-text">Deal</span> of the @Model.Countdown.Month.ToString(" MMMM ")</h3>
-                <h4>@Model.DiscProduct.Name</h4>
+                <a href= "/product/details/@Model.Countdown.Product.Id"><h4>@Model.Countdown.Product.Name</h4></a>
                 <div class="d-flex">
-                    <h4 class="old-price"> <del>@Model.DiscProduct.Price </del></h4>
-                    <h4 style="font-weight: bold; color: #f28123; margin-left: 17px;" class="new-price"> @(newPrice) AZN </h4>
+                    <h4 class="old-price"> <del>@Model.Countdown.Product.Price </del></h4>
+                    <h4 style="font-weight: bold; color: #f28123; margin-left: 17px;" class="new-price"> @Model.Countdown.Product.Discount </h4>
                 </div>
                 <div class="text">@Model.Countdown.dealDescr</div>
                 <!--Countdown Timer-->

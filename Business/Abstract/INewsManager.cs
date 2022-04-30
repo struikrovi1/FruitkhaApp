@@ -15,5 +15,11 @@ namespace Business.Abstract
         void Update(News News);
 
         void Delete(News News);
+
+        List<News> LastNews(string userId, int newsId);
+
+        int GetAllCount();
+
+        List<News> GetAll(int? pageNo, int recordSize);
     }
 }

@@ -1,0 +1,90 @@
+﻿@model Entities.Contact
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>@Model.Name 's Message</h4>
+    <hr />
+
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 text-left">
+            <div class="email-rightbar">
+                <div class="card email-open-box m-b-30">
+                    <div class="card-header">
+                        <ul class="list-inline mb-0">
+
+                            <li class="list-inline-item float-right"><a href="#"><i class="feather icon-folder font-20"></i></a></li>
+                            <li class="list-inline-item float-right"><a href="#"><i class="feather icon-printer font-20"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-b-30">
+                            <div class="col-md-5">
+                                <div class="media">
+                                    <img class="align-self-center mr-3" src="/frontadmin/assets/images/users/men.svg" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h6 class="mt-0">@Model.Name</h6>
+                                        <p class="text-muted mb-0">@Model.Email</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="open-email-head">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item"></li>
+                                        <li class="list-inline-item"><a href="#"><i class="feather icon-star font-20"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="feather icon-corner-up-left font-20"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="feather icon-more-vertical- font-20"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p class="text-muted">Hi,</p>
+                                <p class="text-muted">@Model.Message</p>
+
+                                <div style=" text-align: left;">
+                                 
+                                    <p style="font-weight: bold;margin-bottom: 10px;"><small>Subject: </small> @Model.Subject</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="open-email-footer">
+
+                            <div class="row text-right">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-primary-rgba my-1"><i class="feather icon-corner-up-left mr-2"></i>Reply</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+
+    <a asp-action="Index">Back to Email List</a>
+</div>
+
+
+
+
+
+
+
+

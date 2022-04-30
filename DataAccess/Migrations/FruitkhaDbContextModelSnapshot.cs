@@ -102,6 +102,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Read")
+                        .HasColumnType("int");
+
                     b.Property<string>("Subject")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -118,9 +121,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Month")
                         .HasColumnType("datetime2");
@@ -297,6 +297,9 @@ namespace DataAccess.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal?>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
@@ -333,7 +336,7 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsIndex")
+                    b.Property<bool>("IsIndex")
                         .HasColumnType("bit");
 
                     b.Property<string>("SubTitle")
